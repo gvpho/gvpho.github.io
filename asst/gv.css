@@ -1,18 +1,473 @@
-// Extra small devices (portrait phones, less than 576px)
-// No media query since this is the default in Bootstrap
+/*@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);*/
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width:576px){.p-100{max-width:25%}} /* 540px */
-@media (min-width:768px){.p-100{max-width:50%}} /* 720px */
-@media (min-width:992px){.p-100{max-width:75%}}
-@media (min-width:1200px){.p-100{max-width:100%}}/* 1140px */
-/* this does work but needs fine tuning - yui's shot does get small but well. It kinda worked but still seems to over size on iOS device simulator!  */
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-/* portrait classes for  */
-.p-100 {/*width: 100%;*/
-/* I had a thought of changing the px to % to see if that might work better since I can't seem to get the img to get any smaller */
-display: block;margin: 3px auto;text-align: center;}
-/* .p-100 doesn't show up in bootstrap .css but d-block does but not really much of other than it's display block. this does work with a single portrait shot but doesn't seem to offer any respostinve classes. */
-/*.w-100{width:100%!important}.h-25{height:25%!important}.h-50{height:50%!important}.h-75{height:75%!important}*/
+body {width: 90%;border: 5px dashed #bdc3c7; /*font-family: 'Source Sans Pro', sans-serif;*/ font-family: 'Gill Sans','Gill Sans MT', sans-serif; padding: 20px; margin: 20px auto; max-width: 900px; font-size: 1.85rem;}
 
-.navbar-collapse {}
+sbody {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+
+
+
+/*h2 {color: white;font-weight: bold;text-align: center;padding: 5px 0;background: #C90;border-bottom: 4px dashed;text-shadow: 2px 2px 1px #666;letter-spacing: 1px;}*/
+/*#wrap {width: 90%;border: 5px dashed #bdc3c7;*}*/
+a {color: #6025FF; text-shadow: 2px 2px 1px #C9C9C9;}
+/* ^^^ Reason why this was missing is that the bootstap is defaulting the light link color and I changed it so that the link wasn't so pale. */
+h1 {font-size: 3rem;font-weight: bold;color: #2c3e50;/*text-align: center*/;letter-spacing:3px; padding:0 45px 0;}
+.post,article {margin-bottom: 20px; border-top: 2px dotted #999; border-bottom: 2px dotted /*rgba(255, 255, 255, 0.3)*/ #999;}
+
+ximg {/* broke this since it's lining up all my pix */
+    display: block;
+    max-width: 100%;
+}
+
+
+/*
+section.am {  border-top: 2px dotted #999; border-bottom: 2px dotted}
+section.pm {}
+this currently breaks the layout
+*/
+
+h2 {font-size: 2.8rem;font-weight: bold;color: #2c3e50;/*text-align: center;*/ padding:0 45px 0; font-family: 'Gill Sans', 'Gill Sans MT', sans-serif; background: #888;}
+
+/*.date,*/
+h3 {color: red;letter-spacing: 0.1rem;text-transform: uppercase; padding: 0 0 0 20px; font-size: 2rem; font-weight: bold; font-family:  'Gill Sans', 'Gill Sans MT', sans-serif; background: url('../../img/emos/apple/f97f6391a4aacdc265920d76fe24342c.png') no-repeat 1px 2px;  background-size: 16px 16px; width: 75%; border-bottom: 2px dashed red; /*border: 2px dotted #666;*/}
+
+h4 {font-size: 2rem;font-weight: bold;color: #2c3e50;/*text-align: center;*/ padding:0 45px 0; font-family:  'Gill Sans', 'Gill Sans MT', sans-serif; /*background: #666;*/}
+   /*.tra, .m$, .eat, .party, .nail, .hair, .sushi, photo*/
+   .tra {background: url('../../img/emos/apple/e5ddc9a97afbe997a29f990fe06665f9.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   .money {background: url('../../img/emos/apple/e6eefd4be4310b693b3a40c9e47590f3.png') no-repeat 18px -4px; background-size: 27px 27px;}
+   .eat {;}
+   .party {background: url('../../img/emos/apple/party,58bf898dabadf0b7a5bf44c5d92da94a.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   .nail {background: url('../../img/emos/apple/a9d37e2a9b4e2d8cf8b37c6be1df451b.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   .hair {background: url('../../img/emos/apple/6ea8e0dcb85d614dc37e77be02d3eabd.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   .sushi {background: url('../../img/emos/apple/38e1f41b1bd68a515e3c4d22f7343887.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   .photo {background: url('../../img/emos/apple/934adcbab625c420a6db500c17a735f7.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   .bus {background: url('../../img/emos/apple/f8c8c2d21b3fff59ad4632931e99b36c.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   .shop {background: url('../../img/emos/apple/dbaaea626fb3e07de2bcf9d8933324bd.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   .hostp {background: url('../../img/emos/apple/535816e338c15affb7b4f32406ffc6d7.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   .pil {background: url('../../img/emos/apple/pil,5c8d17c0b1c9d99d055a78c4d9a82a2c.png') no-repeat 10px -1px; background-size: 23px 23px;}
+   .cof  {background: url('../../img/emos/apple/2cefd80b507e9bcbb49c44046e599303.png') no-repeat 18px -3px; background-size: 23px 23px;}
+   
+   /* goals */
+   /* Spiritual/mental - sparkles*/
+   .g1 {background: url('../../img/emos/apple/d418c87ae247fad8fa4c9b1e9584175d.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   /* health/body */   
+   .g2 {background: url('../../img/emos/apple/9f3d7bed3e7d553fded4dbb854dbb122.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   /* Relationships */
+   .g3 {background: url('../../img/emos/apple/093b8be3909bab362710f9f206e43022.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   /* Career */
+   .g4 {background: url('../../img/emos/apple/58bf898dabadf0b7a5bf44c5d92da94a.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   /* Financial */
+   .g5 {background: url('../../img/emos/apple/58bf898dabadf0b7a5bf44c5d92da94a.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   /* stuff/eqump */
+   .g6 {background: url('../../img/emos/apple/58bf898dabadf0b7a5bf44c5d92da94a.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   /* activities */
+   .g7 {background: url('../../img/emos/apple/5bf3470119335891fb6a01159befa47b.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   /* house*/
+   .g8 {background: url('../../img/emos/apple/58bf898dabadf0b7a5bf44c5d92da94a.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   /* plane*/
+   .g9 {background: url('../../img/emos/apple/1fe1232e6067b1353acb1da6933ba72c.png') no-repeat 10px -3px; background-size: 27px 27px;}
+   
+   /* end goals*/
+   
+.quote{border-left: 5px solid #bdc3c7;padding-left: 5px;}
+/*hr{border: 0;height: 0;border-top: 1px solid rgba(0, 0, 0, 0.1);border-bottom: 1px solid rgba(255, 255, 255, 0.3);}*/
+
+/* Spring */
+.sprg,.spr {background: url('../../img/emos/apple/7a13b4a368a4788a0e6cf7479e0b3ffe.png') no-repeat 10px 1px;background-size: 27px 27px;}
+
+/* summer */
+.sum {background: url('../../img/emos/apple/6c7b8f9a78e98a35e160b02d8e06324f.png') no-repeat 10px 1px;background-size: 27px 27px;}
+
+/* fall */
+.fall {background: url('../../img/emos/apple/7319bbe4df390a89d2beb0ec0ba5e9d2.png') no-repeat 10px 0px;background-size: 27px 27px;}
+.fall1 {background: url('../../img/emos/apple/cf548510b2dc27612811d3931807404e.png') no-repeat 10px 1px;background-size: 27px 27px;}
+.fall2 {background: url('../../img/emos/apple/a844ca87b51d725113066332bb413875.png') no-repeat 10px 1px;background-size: 27px 27px;}
+.fall3 {background: url('../../img/emos/apple/acb78d21fa2aaeba5b7296546b4d1787.png') no-repeat 10px 1px;background-size: 27px 27px;}
+
+/* winter */
+.win {background: url('../../img/emos/apple/_winter,734d674da547dddeac6d6fd74d7b8637.png') no-repeat 5px -0px;background-size: 35px 35px;}
+/*.win {background: url('../img/emos/apple/734d674da547dddeac6d6fd74d7b8637.png') no-repeat 10px 1px; background-size: 27px 27px;}*/
+.win1 {background: url('../../img/emos/apple/_santa,4457f22e4abaea1958b8b50431b5cc1f.png') no-repeat 10px -2px;background-size: 25px 25px;}
+/* santa */
+.win2 {background: url('../../img/emos/apple/d37018524f608cc1923772e7fe0aacba.png') no-repeat 10px -1px;background-size: 25px 25px;}
+/* snow flake */
+.win3 {background: url('../../img/emos/apple/e5cbf202ac1710ad23647097543ff2d1.png') no-repeat 10px 1px;background-size: 27px 27px;}
+/* Val day */
+.win4  {background: url('../../img/emos/apple/prez,a52c7af2dffb54262fca620c03dc29fc.png') no-repeat 10px 1px;background-size: 27px 27px;}
+/* flag */
+
+	/*.hallow {}*/
+	/*.turk {}*/
+
+.example1 {/* https://www.w3schools.com/css/css3_backgrounds.asp */
+    background: url('../../img/emos/apple/7a13b4a368a4788a0e6cf7479e0b3ffe.png'), url('../img/emos/apple/7a13b4a368a4788a0e6cf7479e0b3ffe.png');
+    background-position: 200px center, 0px center;
+    background-size: 100px 100px, 10px 10px;
+    background-repeat: no-repeat, repeat-y;
+    padding: 0 0 0 13px;
+}
+
+/* /\/\/\ my styles */
+/* img styles */
+/* wide img styles - might add a default that will go for both portrait and landscape shots so that they fit within a type of style. */
+img.dis,div.dis,.cen {display: block;margin: 3px auto;text-align: center;}
+.ish,.i2,.i3,.i4,.i5,.i6,.i7,.i8,.i9,.i10,.i11,.i19,.i20 {border: 1px solid #888;box-shadow: 2px 2px 2px #888;margin: 2px 0px 1px;}
+.i1 {width:800px;margin:0 auto;display: block;margin: 8px 3px;border: 1px solid #888; box-shadow: 2px 2px 3px #888;} 
+.i1re {width:95%;margin:0 auto;display: block;margin: 8px 3px;border: 1px solid #888; box-shadow: 2px 2px 3px #888;} 
+.i1n {width:800px;background-position: center;margin: 8px 10px;}	
+.i2 {height:598px;} 
+.i2n {height:598px;margin: 2px 0px 0px;}	
+.i2h {width: 399px;border: 1px solid #888; box-shadow: 2px 2px 3px #888;margin: 0px 0px;} 
+.i2hn {width: 399px;margin: 2px 0px 0px;}
+/* 399x299 for sizing ps files */
+/*.i2hn {width: 399px;margin: 2px 0px 0px;}*/
+
+.i2hre {width: 47.5%; border: 1px solid #888; box-shadow: 2px 2px 3px #888; margin: 0px 0px;} 
+.i3 {width: 264px;} 
+.i3re {width: 31%;} 
+
+.i3n {width: 264px;margin: 2px 0px 0px;}	
+.i4 {width: 197px;} .i4n {width: 197px;margin: 2px 0px 0px;}
+.i5 {width: 157px;} .i5n {width: 157px;margin: 2px 0px 0px;}
+/* 157x106 for sizing ps files*/
+.i6 {width: 130px;} .i6n {width: 130px;margin: 2px 0px 0px;}
+.i7 {width: 111px;} .i7n {width: 111px;margin: 2px 0px 0px;} /* removing the "margin" also gets rid of that spacing that a charrage return space */
+.i8 {width: 96.5px;} .i8n {width: 96.5px;margin: 2px 0px 0px;}
+.i9 {width: 85.5px;} .i9n {width: 85.5px;margin: 2px 0px 0px;}
+.i10 {width: 76.5px;} .i10n {width: 76.5px;margin: 2px 0px 0px;}
+.i11 {width: 69.5px;} .i11n {width: 69.5px;margin: 2px 0px 0px;}
+.i19 {width: 40px;} .i19n {width: 40px;margin: 2px 0px 0px;}
+.i20 {width: 36.3px;} .i20n {width: 36.3px;margin: 2px 0px 0px;}
+.i25 {width: 20.3px;} .i25n {width: 20.3px;margin: 2px 0px 0px;}
+.i30 {width: 15px;} .i30n {width: 15px;margin: 2px 0px 0px;}
+
+/* phone bks */
+.i1r {width:797px;margin:0 auto;display: block;margin: 8px 3px;border-radius: 35px;box-shadow: 2px 2px 2px #888;border: .1px solid #888;}	
+.i2r {width: 330px;border: 1px solid #888;border-radius: 25px;box-shadow: 3px 3px 4px #888;margin: 0px 2px;}
+.i3r {width: 258px;border: 1px solid #888;border-radius: 25px;box-shadow: 2px 2px 3px #888;margin: 0px 2px;}
+.i4r {height: 380px;border: 1px solid #888;border-radius: 25px;box-shadow: 3px 3px 4px #888;margin: 0px .5px;}		
+.i5r {height: 280px;border: 1px solid #888;border-radius: 15px;box-shadow: 3px 3px 4px #888;margin: 0px 2px;}
+.r1 {border-radius: 7px;}
+.r2 {border-radius: 15px;}
+.i4rn {height: 280px;}
+
+/* centered img/text */
+
+/* base span */
+span {color: black;font-weight: 500; text-shadow: 1px 1px #666;letter-spacing: 1px;}
+.gry {color:#777; font-weight:normal; /*text-shadow: 1px 1px; #000;*/}
+
+
+/* Chakra styles */
+/* 7th chakra */.se  {color: #F0F; font-weight: 500; /*text-shadow: 2px 2px #666;*/} 	
+/* 6th chakra */.si  {color: #C6F; font-weight: 500; /*text-shadow: 2px 2px #666;*/} 	
+/* 5th chakra */.fi  {color: #00CBBC; font-weight: 500; /*text-shadow: 2px 2px #666;*/} 
+/* 4th chakra */.fo  {color: #00CE00; font-weight: 500; text-shadow: 1px 1px #888; letter-spacing: 1px;} 
+/* 3th chakra */.rd  { color: #E1D000; font-weight: 500; /*text-shadow: 1px 1px #999; letter-spacing: 1px;*/border-bottom: 1px dotted #E1D000;} 
+/* 2nd chakra */.nd  { color: #FF7F00; font-weight: 500; text-shadow: 1px 1px #999; letter-spacing: 1px;border-bottom: 1px dotted #ff7f00; /*border-spacing: 10px; line-height: 4px; margin-bottom: 4px;*/} 	
+/* 1st chakra */.st  {color: #F00; font-weight: 500; /*text-shadow: 2px 2px #666*/;border-bottom: 1px dotted #F00;} 
+/* end chakra styles */
+.mental,.men { color: #C6F; font-weight: 500; /*text-shadow: 1px 1px #999; letter-spacing: 1px; border-bottom: 1px dotted #ff7f00; border-spacing: 10px; line-height: 4px; margin-bottom: 4px;*/ text-shadow: 0px 0px #666;letter-spacing: 0;} 	
+
+
+
+/* days of the week*/
+.d1 {border-bottom: 4px dotted #FF0A1B; border-top: 4px dotted #FF0A1B; padding: 2px 0; margin: 35px 0;}
+.d2 {border-bottom: 4px dashed #FF9909; border-top: 4px dashed #FF9909; padding: 2px 0; margin: 35px 0;}
+.d3 {border-bottom: 4px solid #FFFA08; border-top: 4px solid #FFFA08; padding: 2px 0; margin: 35px 0;}
+.d4 {border-bottom: 4px double #10FF1E; border-top: 4px double #10FF1E; padding: 2px 0; margin: 35px 0;}
+.d5 {border-bottom: 4px groove #1334FF; border-top: 4px groove #1334FF; padding: 2px 0; margin: 35px 0;}
+.d6 {border-bottom: 4px ridge #BF15FF; border-top: 4px ridge #BF15FF; padding: 2px 0; margin: 35px 0;}
+.d7 {border-bottom: 4px inset #FF4FE3; border-top: 4px outset #FF4FE3; padding: 2px 0; margin: 35px 0;}
+/* days of the week*/
+
+p { padding: 4px 0 -5px; /*margin: 0 17px 10px;*/ text-indent: 15px; /*width: 800px;*/ color: #222; }
+p.center {text-align: center;}		
+p::first-letter /* nth-child(No.), div div p, div > p  */ {font-weight: bold; font-family:  'Gill Sans', 'Gill Sans MT', sans-serif; font-size: 20px; color: #4C4C4C; letter-spacing: 1px;} 
+p.cen {text-align: center;}
+mark,.s4 {font-weight: bold;border-radius: 5px;padding: 0 3px;background: yellow;}
+br {display: block; margin-bottom: 6px;/* < these work / not these > */font-size: 2px; line-height: 2px;}
+
+/* word spacing with centered divs */
+/*.ws1 {word-spacing: 95px;}*/
+/*.ws2 {word-spacing: 130px;}*/
+.ws3 {word-spacing: 95px;}
+.ws4 {word-spacing: 175px;}
+.ws5, .ws2 {word-spacing: 130px;}
+.ws6 {word-spacing: 100px;}
+.ws7 {word-spacing: 80px;}
+.ws8 {word-spacing: 60px;}
+.ws9 {word-spacing: 40px;}
+
+.cap { font-variant: small-caps; }
+
+/* for imgs that are too dark */
+.opa0 {opacity: 5;} 
+.opa1 {opacity: 0.95;} 
+.opa {opacity: 0.9;} 
+.opa2 {opacity: 0.85;} 
+.opa3 {opacity: 0.75;}
+.opa4 {opacity: 0.65;} 
+.blr {filter: blur(.3px);} 
+.blr2 {filter: blur(5px);} 
+.co1 {filter: contrast(1.0);}
+.co2 {filter: contrast(1.4);}
+.brt1 {filter: brightness(1.0);}
+.brt {filter: brightness(1.4);}
+.ipa {padding: 7px;}
+.bw {filter: grayscale(100%);}
+.shr {image-rendering: crisp-edges;}
+/* this is new but not sure if it does anything. It does vs using 'pixelated' 
+readmore @ https://css-tricks.com/almanac/properties/i/image-rendering/ */
+
+/*grayscale(%)*/
+
+ol.ro,ul.ro {/*border: 1px dotted;*/
+border-radius: 10px;background-color: #000405;color: #fff;padding: 1px 5px 7px;color: #FFFCFC;margin: 3px;}	
+
+ol.roo,ul.roo {border: 1px dotted;border-radius: 5px; padding: 3px;color: #000;margin: 3px;list-style-position: inside;}	
+.dnt {list-style-image: url(../img/emos/mixi/down,63.png); margin: 0 0 0 4px; /*font-weight: bold;*/  color: blue;
+	text-shadow: 1px 1px 1px #666;letter-spacing: 2px;}
+.upt {list-style-image: url(../img/emos/mixi/up,62.png); 
+	margin: 0 0 0 4px; /*font-weight: bold;*/  color: red;
+	text-shadow: /*1px 1px 4px */1px 1px 1px #666;letter-spacing: 1px;}	
+.em {list-style-image: url(../img/emos/mixi/hosp.png); 
+	margin: 0 0 0 4px;}	
+/* seems that the img needs to be sized and adding a size effect the text/line height insted so none of these styles are being used */	
+.lmoneyfly {list-style-image: url(../../img/emos/apple/e6eefd4be4310b693b3a40c9e47590f3.png); 
+	margin: 0 0 0 4px; }	
+.lsmile {list-style-image: url(../../img/emos/mixi/hosp.png); 
+	margin: 0 0 0 4px;}	
+.lpoo {list-style-image: url(../../img/emos/mixi/hosp.png); 
+	margin: 0 0 0 4px;}		
+
+.duo {color: #00CE00; font-weight: 500; text-shadow: .5px .5px #888; letter-spacing: 1px;}
+.mem { color: #FF7F00; font-weight: 500; /*text-shadow: 1px 1px #999; letter-spacing: 1px; border-bottom: 1px dotted #ff7f00; border-spacing: 10px; line-height: 4px; margin-bottom: 4px;*/ text-shadow: 0px 0px #666;letter-spacing: 0;} 	
+
+
+	
+.gr {color: #999; }	
+	
+li,ol {list-style-position: inside;}	
+	
+.boxp {text-align:center;} 
+.boxs {
+  font-size:16px;
+  font-weight:bold;
+  width:auto;
+  border:1px solid #999;	
+  }
+  
+/* emojis */
+.poo {
+    width: 23px;
+    height: 24px;
+    background: url('../img/emos/sprites/sprites.png') 220px -200px;
+}
+ 
+/* emojis */ 
+.emo1 { height:10px; width: 10px; margin: 1px 1px -4px;}   
+.emo { height:18px; width: 18px; margin: 1px 1px -4px;}
+.emos  { height:24px; /*width: 32px;*/ margin: 1px 1px -6px;}
+.emo2  { height:64px; /*width: 32px;*/ margin: 1px 1px -6px;}
+.emo3  { height:128px;  /*width: 32px;*/ margin: 1px 1px -6px;}  
+
+/* shoots gallery */
+/*div.gallery {margin: 5px;border: 1px solid #ccc;float: left;width: 180px;}*/
+div.gallery {margin: 3px;border: 1px dotted #fff;height: auto;width: 86px;float: left;text-align: center;}	
+div.img img {display: inline;margin: 3px;border: 1px solid#fff;/*width:78px;*/}
+div.gallery:hover {border: 1px solid #777;}
+/*div.gallery img {width: 100%;height: auto;}*/
+/*div.desc {padding: 15px;text-align: center;}*/
+div.desc {text-align: center;font-size:14px;/*font-weight: normal;*/color:#fff;/*width: 110px;*/margin: 2px;}
+/* these styles are broken might be better to build from the start than cut and paste */
+
+/* from https://stackoverflow.com/questions/6395890/how-to-double-strikeout-a-text-in-html */
+del {text-decoration: none;position: relative;}
+del:after {content: ' ';font-size: inherit;display: block;position: absolute;right: 0;left: 0;top: 40%;bottom: 30%;border-top: 1.5px solid #000;border-bottom: 1.5px solid #000;}
+/* end ⤴ */
+
+/*=== no js dropdown 
+https://designmodo.com/css3-dropdown-menu/ ===*/
+/*=== 
+HOW TO CREATE A CSS3 DROPDOWN MENU [TUTORIAL]
+
+"How to create a CSS3 Dropdown Menu [Tutorial]" was specially made for DesignModo by our friend Valeriu Timbuc.
+
+Links:
+http://vtimbuc.net/
+https://twitter.com/vtimbuc
+http://designmodo.com
+http://vladimirkudinov.com
+
+*/
+
+/* Reset */
+.menu,
+.menu ul,
+.menu li,
+.menu a {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+/* Menu */
+.menu {	
+	height: 40px; /* was 40px */
+	width: 505px;
+
+	background: #4c4e5a;
+	background: -webkit-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: -moz-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: -o-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: -ms-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.menu li {
+	position: relative;
+	list-style: none;
+	float: left;
+	display: block;
+	height: 40px;
+}
+
+/* Links */
+
+.menu li a {
+	display: block;
+	padding: 0 14px;
+	margin: 6px 0;
+	line-height: 28px;
+	text-decoration: none;
+	
+	border-left: 1px solid #393942;
+	border-right: 1px solid #4f5058;
+
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 13px;
+
+	color: #f3f3f3;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+
+	-webkit-transition: color .2s ease-in-out;
+	-moz-transition: color .2s ease-in-out;
+	-o-transition: color .2s ease-in-out;
+	-ms-transition: color .2s ease-in-out;
+	transition: color .2s ease-in-out;
+}
+
+.menu li:first-child a { border-left: none; }
+.menu li:last-child a{ border-right: none; }
+
+.menu li:hover > a { color: #8fde62; }
+
+/* Sub Menu */
+
+.menu ul {
+	position: absolute;
+	top: 40px;
+	left: 0;
+
+	opacity: 0;
+	
+	background: #1f2024; /* of the dropdown */
+
+	-webkit-border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+
+	-webkit-transition: opacity .25s ease .1s;
+	-moz-transition: opacity .25s ease .1s;
+	-o-transition: opacity .25s ease .1s;
+	-ms-transition: opacity .25s ease .1s;
+	transition: opacity .25s ease .1s;
+}
+
+.menu li:hover > ul { opacity: 1; }
+
+.menu ul li {
+	height: 0;
+	overflow: hidden;
+	padding: 0;
+
+	-webkit-transition: height .25s ease .1s;
+	-moz-transition: height .25s ease .1s;
+	-o-transition: height .25s ease .1s;
+	-ms-transition: height .25s ease .1s;
+	transition: height .25s ease .1s;
+}
+
+.menu li:hover > ul li {
+	height: 25px; /* 36px tightens the dropdown*/
+	overflow: visible;
+	padding: 0;
+}
+
+.menu ul li a {
+	width: 125px; /* was 100px */
+	padding: 0px 0 0px 35px; /* 4px 0 4px 40px */
+	margin: 0;
+
+	border: none;
+	border-bottom: 1px solid #353539;
+}
+
+.menu ul li:last-child a { border: none; }
+
+/* Icons */
+/*  */
+.menu a.documents { background: url(../img/menu/docs.png) no-repeat 6px center; }
+.menu a.messages { background: url(../img/menu/bubble.png) no-repeat 6px center; }
+.menu a.up { background: url(../img/menu/up.png) no-repeat 6px center; }
+.menu a.down { background: url(../img/menu/down.png) no-repeat 6px center; }
+.menu a.signout { background: url(../img/menu/arrow.png) no-repeat 6px center; }
+.menu a.phone { background: url(../img/menu/phone.png) no-repeat 6px center; }
+
+/* seasons */
+.menu a.winter { background: url(../img/menu/seasons/snowingsnowman2.png) no-repeat 6px center; }
+.menu a.spring { background: url(../img/menu/seasons/cherryblossom2.png) no-repeat 6px center; }
+.menu a.summer { background: url(../img/menu/seasons/sunflower2.png) no-repeat 6px center; }
+.menu a.njsfall { background: url(../img/menu/seasons/fallmaple2.png) no-repeat 6px center; }
+/*=== end ===*/
+
+/* js countup */
+.countup {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.countup .timeel {
+  display: inline-block;
+  padding: 10px;
+  background: #151515;
+  margin: 0;
+  color: white;
+  min-width: 2.6rem;
+  margin-left: 13px;
+  border-radius: 10px 0 0 10px;
+}
+.countup span[class*="timeRef"] {
+  border-radius: 0 10px 10px 0;
+  margin-left: 0;
+  background: #e8c152;
+  color: black;
+}
